@@ -5,7 +5,7 @@ import { setupNearWallet } from "@near-wallet-selector/near-wallet";
 import { setupSender } from "@near-wallet-selector/sender";
 import { setupLedger } from "@near-wallet-selector/ledger";
 import { setupMathWallet } from "@near-wallet-selector/math-wallet";
-// import { setupWalletConnect } from "@near-wallet-selector/wallet-connect";
+import { setupNearSnap } from "@near-wallet-selector/near-snap";
 import { setupModal } from "@near-wallet-selector/modal-ui";
 import type { WalletSelectorModal } from "@near-wallet-selector/modal-ui";
 import { CONTRACT_ID } from "../constants";
@@ -65,6 +65,7 @@ export class AppComponent implements OnInit {
       network: "testnet",
       debug: true,
       modules: [
+        setupNearSnap(),
         setupNearWallet(),
         setupSender(),
         setupLedger(),
